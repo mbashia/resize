@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Document Height Example</title>
+  <style>
+    #content {
+      background-color: lightblue;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="content">This box adjusts to the window height</div>
+
+  <script>
+    function documentHeight() {
+      // Set the height of the #content div to match the window height
+      const content = document.getElementById('content');
+      content.style.height = `${window.innerHeight}px`;
+    }
+
+    // Call documentHeight on page load
+    documentHeight();
+
+    // Add an event listener to adjust the height when the window is resized
+    window.addEventListener('resize', documentHeight);
+  </script>
+</body>
+</html>
